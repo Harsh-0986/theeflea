@@ -5,7 +5,6 @@ const Footer = () => {
 	return (
 		<div className="my-6 flex flex-col items-center justify-center align-center">
 			<Link href="https://instagram.com">
-				{" "}
 				<BsInstagram className="text-xl mb-6" />
 			</Link>
 			<div>

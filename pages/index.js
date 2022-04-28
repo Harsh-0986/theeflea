@@ -1,7 +1,7 @@
 import DropdownBut from "../components/DropdownBut";
 import Footer from "../components/Footer";
 import SubscribeForm from "../components/SubscribeForm";
-import Head from "next/link";
+import Head from "next/head";
 
 export default function Home() {
 	return (

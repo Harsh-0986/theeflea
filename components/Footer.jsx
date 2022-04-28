@@ -4,7 +4,10 @@ import { BsInstagram } from "react-icons/bs";
 const Footer = () => {
 	return (
 		<div className="my-6 flex flex-col items-center justify-center align-center">
-			<BsInstagram className="text-xl mb-6" />
+			<Link href="https://instagram.com">
+				{" "}
+				<BsInstagram className="text-xl mb-6" />
+			</Link>
 			<div>
 				<span>
 					Created by

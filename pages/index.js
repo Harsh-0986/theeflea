@@ -1,10 +1,14 @@
 import DropdownBut from "../components/DropdownBut";
 import Footer from "../components/Footer";
 import SubscribeForm from "../components/SubscribeForm";
+import Head from "next/link";
 
 export default function Home() {
 	return (
 		<div>
+			<Head>
+				<title>Thee Flea</title>
+			</Head>
 			<img src="image (2).jpeg" className="w-full" />
 			<img src="/image (1).jpeg" className="w-full" />
 			<div className="relative">

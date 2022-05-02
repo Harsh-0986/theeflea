@@ -4,8 +4,10 @@ import getStripe from "../lib/getStripe";
 
 const DisplayPrice = ({ day }) => {
 	const [qty, setQty] = useState(1);
+	const [loading, isLoading] = useState(false)
 
 	const handleCheckout = async () => {
+isLoading(true)
 		const stripe = await getStripe();
 
 		const response = await fetch("/api/stripe", {
@@ -22,6 +24,8 @@ const DisplayPrice = ({ day }) => {
 
 		const data = await response.json();
 		stripe.redirectToCheckout({ sessionId: data.id });
+
+		isLoading(false)
 	};
 
 	let price;
@@ -55,12 +59,14 @@ const DisplayPrice = ({ day }) => {
 					/>
 				</div>
 			</div>
-			<button
+{!loading ?	(		<button
 				className="w-[100%] bg-blue-500 px-4 py-2 mt-4 rounded-lg text-white font-bold flex justify-center align-center"
 				onClick={handleCheckout}
 			>
 				Book Now
-			</button>
+			</button>):(<div className="flex justify-center py-3 items-center">
+			<div className="animate-spin rounded-full h-32 w-full border-b-2 border-red-700" />
+		</div>)}
 		</div>
 	);
 };

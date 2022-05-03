@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 						quantity: req.body.qty,
 					},
 				],
-				success_url: `${req.headers.origin}/?success=true`,
+				success_url: `${req.headers.origin}/success`,
 				cancel_url: `${req.headers.origin}/?canceled=true`,
 			};
 

@@ -3,6 +3,8 @@ import pdf from "html-pdf";
 export default async function handler(req, res) {
 	const today = new Date();
 
+	console.log(req.body);
+
 	const pdfTemplate = `<!doctype html>
     <html>
        <head>
@@ -125,7 +127,7 @@ export default async function handler(req, res) {
     </html>`;
 
 	if (req.method === "POST") {
-		pdf.create(pdfTemplate(req.body), {}).toFile(`${Date.now()}`, (err) => {
+		pdf.create(pdfTemplate, {}).toFile(`${Date.now()}`, (err) => {
 			if (err) res.send(Promise.reject());
 
 			res.send(Promise.resolve());
